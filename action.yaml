@@ -1,0 +1,15 @@
+name: 'Pipeline Run Air'
+description: 'Sample Pipeline Run Air'
+inputs:
+  message:  # id of input
+    description: 'Enter the message'
+    required: true
+    default: 'Hello World'
+outputs:
+  time: # id of output
+    description: 'What is time now'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.message }}
